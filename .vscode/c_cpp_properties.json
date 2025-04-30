@@ -8,10 +8,10 @@
         {
             "name": "PlatformIO",
             "includePath": [
-                "C:/Users/jiang/Documents/Github/platform-espressif32-develop-examples/espidf-arduino-blink/include",
-                "C:/Users/jiang/Documents/Github/platform-espressif32-develop-examples/espidf-arduino-blink/src",
+                "C:/Users/jiang/Documents/Github/espidf-arduino-lettel-shell/include",
+                "C:/Users/jiang/Documents/Github/espidf-arduino-lettel-shell/src",
                 "C:/Users/jiang/.platformio/packages/framework-espidf@3.40407.240606/components/esp_ringbuf/include",
-                "C:/Users/jiang/Documents/Github/platform-espressif32-develop-examples/espidf-arduino-blink/.pio/build/esp32dev/config",
+                "C:/Users/jiang/Documents/Github/espidf-arduino-lettel-shell/.pio/build/esp32dev/config",
                 "C:/Users/jiang/.platformio/packages/framework-espidf@3.40407.240606/components/newlib/platform_include",
                 "C:/Users/jiang/.platformio/packages/framework-espidf@3.40407.240606/components/freertos/include",
                 "C:/Users/jiang/.platformio/packages/framework-espidf@3.40407.240606/components/freertos/include/esp_additions/freertos",
@@ -161,18 +161,18 @@
                 "C:/Users/jiang/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src",
                 "C:/Users/jiang/.platformio/packages/framework-arduinoespressif32/libraries/WiFiProv/src",
                 "C:/Users/jiang/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src",
-                "C:/Users/jiang/Documents/Github/platform-espressif32-develop-examples/espidf-arduino-blink/components/letter-shell/include",
-                "C:/Users/jiang/Documents/Github/platform-espressif32-develop-examples/espidf-arduino-blink/components/letter_shell/include",
+                "C:/Users/jiang/Documents/Github/espidf-arduino-lettel-shell/components/letter-shell/include",
+                "C:/Users/jiang/Documents/Github/espidf-arduino-lettel-shell/components/letter_shell/include",
                 "C:/Users/jiang/.platformio/packages/framework-arduinoespressif32/libraries/HTTPUpdateServer/src",
                 ""
             ],
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
                 "path": [
-                    "C:/Users/jiang/Documents/Github/platform-espressif32-develop-examples/espidf-arduino-blink/include",
-                    "C:/Users/jiang/Documents/Github/platform-espressif32-develop-examples/espidf-arduino-blink/src",
+                    "C:/Users/jiang/Documents/Github/espidf-arduino-lettel-shell/include",
+                    "C:/Users/jiang/Documents/Github/espidf-arduino-lettel-shell/src",
                     "C:/Users/jiang/.platformio/packages/framework-espidf@3.40407.240606/components/esp_ringbuf/include",
-                    "C:/Users/jiang/Documents/Github/platform-espressif32-develop-examples/espidf-arduino-blink/.pio/build/esp32dev/config",
+                    "C:/Users/jiang/Documents/Github/espidf-arduino-lettel-shell/.pio/build/esp32dev/config",
                     "C:/Users/jiang/.platformio/packages/framework-espidf@3.40407.240606/components/newlib/platform_include",
                     "C:/Users/jiang/.platformio/packages/framework-espidf@3.40407.240606/components/freertos/include",
                     "C:/Users/jiang/.platformio/packages/framework-espidf@3.40407.240606/components/freertos/include/esp_additions/freertos",
@@ -322,8 +322,8 @@
                     "C:/Users/jiang/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src",
                     "C:/Users/jiang/.platformio/packages/framework-arduinoespressif32/libraries/WiFiProv/src",
                     "C:/Users/jiang/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src",
-                    "C:/Users/jiang/Documents/Github/platform-espressif32-develop-examples/espidf-arduino-blink/components/letter-shell/include",
-                    "C:/Users/jiang/Documents/Github/platform-espressif32-develop-examples/espidf-arduino-blink/components/letter_shell/include",
+                    "C:/Users/jiang/Documents/Github/espidf-arduino-lettel-shell/components/letter-shell/include",
+                    "C:/Users/jiang/Documents/Github/espidf-arduino-lettel-shell/components/letter_shell/include",
                     "C:/Users/jiang/.platformio/packages/framework-arduinoespressif32/libraries/HTTPUpdateServer/src",
                     ""
                 ]
