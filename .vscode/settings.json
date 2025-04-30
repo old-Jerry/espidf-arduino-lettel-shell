@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "shell_port.c": "cpp",
+        "shell.c": "cpp",
+        "shell.h": "c"
+    }
+}
