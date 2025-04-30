@@ -1,1 +1,4 @@
 # espidf-arduino-lettel-shell
+移植了lettelshell的platfromio工程
+采用esp32idf+arduino组件的方式框架
+lettelshell加载为一个组件来跑
