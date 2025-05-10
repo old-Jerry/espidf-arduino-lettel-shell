@@ -8,7 +8,6 @@
  * @copyright (c) 2019 Letter
  * 
  */
-
  #include "shell_port.h"
  #include "freertos/FreeRTOS.h"
  #include "driver/uart.h"
@@ -16,22 +15,19 @@
  #include "shell.h"
  
  #define     SHELL_UART      UART_NUM_0
- 
-
-
  /*
- log对象
+ log对象//实现log写buffer函数
  */
- char shellBuffer[512];
  void uartLogWrite(char* buffer, short len) {
     // if (uartLog.shell)
     // {
     shellWriteEndLine(&shell, buffer, len);
     // }
 }
-Log uartLog = {.write = uartLogWrite, .active = 1, .level = LOG_DEBUG};
+Log uartLog = {.write = uartLogWrite, .active = 1, .level = LOG_DEBUG};//定义log对象
 
 
+char shellBuffer[512];
 Shell shell;
  /**
   * @brief 用户shell写
@@ -79,7 +75,7 @@ Shell shell;
      shell.write = userShellWrite;
      shell.read = userShellRead;
      shellInit(&shell, shellBuffer, 512);
-     logRegister(&uartLog, &shell);
+     logRegister(&uartLog, &shell);//注册log对象
  
      xTaskCreate(shellTask, "shell", 2048, &shell, 10, NULL);
  }
