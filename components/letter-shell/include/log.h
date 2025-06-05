@@ -8,6 +8,16 @@
  * @copyright (c) 2020 Letter
  * 
  */
+// 输出错误信息（红色）：
+// logError("Init failed, error code: %d", err);
+// 输出警告信息（黄色）：
+// logWarning("Battery level is low: %d%%", battery);
+// 输出普通信息（绿色）：
+// logInfo("System started, version: %s", LOG_VERSION);
+// 输出调试信息（蓝色）：
+// logDebug("x = %d, y = %d", x, y);
+// 输出冗余信息（青色）：
+// logVerbose("Internal state updated");
 #ifndef __LOG_H__
 #define __LOG_H__
 

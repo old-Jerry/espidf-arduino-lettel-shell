@@ -1,7 +1,13 @@
 {
     "files.associations": {
-        "shell_port.c": "cpp",
+        "shell_port.cpp": "cpp",
         "shell.c": "cpp",
-        "shell.h": "c"
+        "shell.h": "c",
+        "array": "cpp",
+        "string_view": "cpp",
+        "format": "cpp",
+        "initializer_list": "cpp",
+        "span": "cpp",
+        "shell_cfg.h": "c"
     }
 }
