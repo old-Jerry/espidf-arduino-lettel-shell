@@ -1,5 +1,6 @@
 {
     "files.associations": {
+<<<<<<< HEAD
         "shell_port.cpp": "cpp",
         "shell.c": "cpp",
         "shell.h": "c",
@@ -9,5 +10,10 @@
         "initializer_list": "cpp",
         "span": "cpp",
         "shell_cfg.h": "c"
+=======
+        "shell_port.c": "c",
+        "shell.c": "c",
+        "shell.h": "c"
+>>>>>>> df4280fee9af75fefbe5da43bc2040ffc56ef6d1
     }
 }

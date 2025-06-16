@@ -15,5 +15,5 @@ set(EXTRA_COMPONENT_DIRS
 #          "lib/letter-shell/src/shell_cmd_list.c"
 #     INCLUDE_DIRS "lib/letter-shell"
 # )
-list(APPEND EXTRA_COMPONENT_DIRS components/letter-shell)
+
 # list(APPEND EXTRA_COMPONENT_DIRS lib/letter-shell)
