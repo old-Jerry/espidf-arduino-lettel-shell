@@ -140,8 +140,6 @@ void loop()
     // server.handleClient();     // 浏览器访问处理
     // ArduinoOTA.handle();
     // digitalWrite(PIN_RGB_LED, !digitalRead(PIN_RGB_LED));
-    logInfo("controlTask-loop-ktech——test");
-    printf("controlTask-loop-ktech——test\n");
     // delay(1000);
     // testDM43_id_scan();
     delay(1);

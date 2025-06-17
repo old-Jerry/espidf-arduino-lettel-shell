@@ -69,14 +69,8 @@ short int userShellRead(char *data, short unsigned int len)
     int i = 0;
     while (i < len)
     {
-        if (Serial.available())
-        {
-            data[i++] = Serial.read();
-        }
-        else
-        {
-            vTaskDelay(1000 / portTICK_PERIOD_MS);
-        }
+        if (Serial.available()){data[i++] = Serial.read();}
+        else{vTaskDelay(1);}
     }
     return i;
 }
