@@ -22,8 +22,6 @@
 #include <Arduino.h>
 #include <WiFi.h>
 #include "KTech.h"
-#include "DM43.h"
-#include "main.h"
 // 使用usbcdc需要修改文件为.cpp
 #define SHELL_UART HWCDCSerial // UART0-默认的调试串口-UART_NUM_0
 #define SHELL_BUFFER_SIZE 512
@@ -80,28 +78,7 @@ short int userShellRead(char *data, short unsigned int len)
     }
     return i;
 }
-// short int userShellRead(char *data, short unsigned int len)
-// {
-//     int totalRead = 0;
-//     unsigned long start = millis();
 
-//     while ((millis() - start) < 20 && totalRead < len)
-//     {
-//         if (Serial.available())
-//         {
-//             int byteRead = Serial.read();
-//             if (byteRead >= 0) {
-//                 data[totalRead++] = (char)byteRead;
-//             }
-//         }
-//         else
-//         {
-//             vTaskDelay(pdMS_TO_TICKS(1));
-//         }
-//     }
-
-//     return totalRead;
-// }
 /**
  * @brief 用户shell初始化
  *
@@ -121,7 +98,7 @@ void userShellInit(void)
     shell.read = userShellRead;
     shellInit(&shell, shellBuffer, 512);
     logRegister(&uartLog, &shell);
-    xTaskCreate(shellTask, "shell", 4096, &shell, 10, NULL);
+    xTaskCreate(shellTask, "shell", 2048, &shell, 10, NULL);
 }
 
 void shellReboot() {
@@ -154,50 +131,22 @@ SHELL_EXPORT_CMD(SHELL_CMD_PERMISSION(0) | SHELL_CMD_TYPE(SHELL_TYPE_CMD_FUNC),
  * 使用格式: KT_speed <value>
  */
 // 定义 KTech 数组（声明和定义只出现一次）
-// extern KTech ktech[6];
-// int shellSetVelocity(int argc, char* argv[])
-// {
-//     if (argc != 2) {
-//         shellPrint(&shell, "Usage: KT_speed <value>\r\n");
-//         return 0;
-//     }
-//     int value = strtol(argv[1], NULL, 10);
-//     ktech[0].runVelocity(value);
-//     ktech[3].runVelocity(value);
-//     shellPrint(&shell, "KTech[0] runVelocity set to %d\r\n", value);
-//     return 0;
-// }
-
-// SHELL_EXPORT_CMD(SHELL_CMD_PERMISSION(0) | SHELL_CMD_TYPE(SHELL_TYPE_CMD_MAIN),
-//                  KT_speed,
-//                  shellSetVelocity,
-//                  Set KTech[0] runVelocity using input value);
-
-/**
- * @brief 设置 DM43(id1) 的转速
- * 
- * 从命令行参数中解析速度值，并调用 dm43.speed_ctrl(id,speed);
- * 使用格式: DM_speed <value>
- */
-// 定义 DM 数组（声明和定义只出现一次）
-// extern DM43 dm43;
-int shellSetDMVelocity(int argc, char* argv[])
+extern KTech ktech[6];
+int shellSetVelocity(int argc, char* argv[])
 {
     if (argc != 2) {
-        shellPrint(&shell, "Usage: DM_speed <value>\r\n");
+        shellPrint(&shell, "Usage: KT_speed <value>\r\n");
         return 0;
     }
-    int value = strtol(argv[1], NULL, 10);//支持小数
-    float speed = value / 10.0; // 减小值，10对应1//适配vofa
-    DM43 dm43(1);  // CAN ID 为 1
-    dm43.setSendFrame(send2CAN);
-    dm43.init(1);
-    dm43.speed_ctrl(1,speed);
-    shellPrint(&shell, "DM_speed runVelocity set to %d\r\n", value);
+    int value = strtol(argv[1], NULL, 10);
+    ktech[0].runVelocity(value);
+    ktech[3].runVelocity(value);
+    shellPrint(&shell, "KTech[0] runVelocity set to %d\r\n", value);
     return 0;
 }
 
 SHELL_EXPORT_CMD(SHELL_CMD_PERMISSION(0) | SHELL_CMD_TYPE(SHELL_TYPE_CMD_MAIN),
-                 DM_speed,
-                 shellSetDMVelocity,
-                 Set DM_speed runVelocity using input value);
+                 KT_speed,
+                 shellSetVelocity,
+                 Set KTech[0] runVelocity using input value);
+
