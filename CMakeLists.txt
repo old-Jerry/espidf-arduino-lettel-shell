@@ -1,11 +1,13 @@
 cmake_minimum_required(VERSION 3.16.0)
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
+# list(APPEND EXTRA_COMPONENT_DIRS letter-shell micro_ros_espidf_component)
 project(espidf-arduino-letter-shell)
 # idf_build_set_property(COMPILE_OPTIONS "-DSHELL_CFG_USER=\"shell_cfg_user.h\"" APPEND)
 
 #使用相对路径指定组件目录-但是在根目录下的无需声明，编译器会自动查找
 set(EXTRA_COMPONENT_DIRS
     components/letter-shell
+    components/micro_ros_espidf_component
 )
 # idf_component_register(
 #     SRCS "lib/letter-shell/src/shell.c"
