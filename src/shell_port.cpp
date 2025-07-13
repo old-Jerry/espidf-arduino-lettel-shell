@@ -22,8 +22,8 @@
 #include <Arduino.h>
 #include <WiFi.h>
 #include "KTech.h"
-#include "DM43.h"
-#include "main.h"
+#include "globals.h"
+
 // 使用usbcdc需要修改文件为.cpp
 #define SHELL_UART HWCDCSerial // UART0-默认的调试串口-UART_NUM_0
 #define SHELL_BUFFER_SIZE 512
@@ -183,9 +183,6 @@ int shellSetDMVelocity(int argc, char* argv[])
     }
     int value = strtol(argv[1], NULL, 10);//支持小数
     float speed = value / 10.0; // 减小值，10对应1//适配vofa
-    DM43 dm43(1);  // CAN ID 为 1
-    dm43.setSendFrame(send2CAN);
-    dm43.init(1);
     dm43.speed_ctrl(1,speed);
     shellPrint(&shell, "DM_speed runVelocity set to %d\r\n", value);
     return 0;

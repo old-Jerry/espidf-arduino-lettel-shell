@@ -7,7 +7,7 @@ project(espidf-arduino-letter-shell)
 #使用相对路径指定组件目录-但是在根目录下的无需声明，编译器会自动查找
 set(EXTRA_COMPONENT_DIRS
     components/letter-shell
-    components/micro_ros_espidf_component
+
 )
 # idf_component_register(
 #     SRCS "lib/letter-shell/src/shell.c"

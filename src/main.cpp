@@ -25,8 +25,9 @@ WebServer server(80);  // 新增：HTTP 服务运行在 80 端口
 #include "shell_port.h"
 #include <driver/twai.h>
 #include "ESP32CAN.h"
-#include "DM43.h"
 
+#include "DM43.h"
+#include "globals.h"
 /* Can run 'make menuconfig' to choose the GPIO to blink,
    or you can edit the following line and set a number here.
 */
@@ -43,8 +44,7 @@ IPAddress ip;
 uint16_t port = 23;
 extern Shell shell;
 // 定义全局 DM43 对象
-// DM43 dm43(1);  // CAN ID 为 1
-
+DM43 dm43(MOTOR_ID);  // CAN ID 为 1
 
 #define SERIALDEBUG telnet
 
@@ -63,8 +63,10 @@ void send2CAN(uint32_t id, uint8_t *data, uint8_t dataLength);
 void setup()
 {
     // 初始化CAN线
-    ESP32Can.CANInit(GPIO_NUM_40, GPIO_NUM_41, ESP32CAN_SPEED_1MBPS);
+    ESP32Can.CANInit(CAN_TX_GPIO, CAN_RX_GPIO, ESP32CAN_SPEED_1MBPS);
     Serial.begin(115200);
+    delay(3000); // 等待串口稳定
+    Serial.println("ESP32 CAN Test");
     // Serial.setRxBufferSize(1024); // 增大接收缓冲区
     // Serial.setTimeout(50); // 设置读取超时为50ms
     // Serial.setRxTimeout(0);
